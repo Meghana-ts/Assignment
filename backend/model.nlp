@@ -1,0 +1,459 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,do,how,i,in,new,segment,set,sourc,up": {
+            "intent": "howto.segment.source",
+            "domain": "default"
+          },
+          "a,can,creat,how,i,in,mparticl,profil,user": {
+            "intent": "howto.mparticle.profile",
+            "domain": "default"
+          },
+          "an,audienc,build,do,how,i,in,lytic,segment": {
+            "intent": "howto.lytics.segment",
+            "domain": "default"
+          },
+          "can,data,how,i,integr,my,with,zeotap": {
+            "intent": "howto.zeotap.integration",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "howto.segment.source": "default",
+          "howto.mparticle.profile": "default",
+          "howto.lytics.segment": "default",
+          "howto.zeotap.integration": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "How do I set up a new source in Segment?",
+            "intent": "howto.segment.source"
+          },
+          {
+            "domain": "default",
+            "utterance": "How can I create a user profile in mParticle?",
+            "intent": "howto.mparticle.profile"
+          },
+          {
+            "domain": "default",
+            "utterance": "How do I build an audience segment in Lytics?",
+            "intent": "howto.lytics.segment"
+          },
+          {
+            "domain": "default",
+            "utterance": "How can I integrate my data with Zeotap?",
+            "intent": "howto.zeotap.integration"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "how": 1,
+              "do": 1,
+              "i": 1,
+              "set": 1,
+              "up": 1,
+              "a": 1,
+              "new": 1,
+              "sourc": 1,
+              "in": 1,
+              "segment": 1,
+              "can": 1,
+              "creat": 1,
+              "user": 1,
+              "profil": 1,
+              "mparticl": 1,
+              "build": 1,
+              "an": 1,
+              "audienc": 1,
+              "lytic": 1,
+              "integr": 1,
+              "my": 1,
+              "data": 1,
+              "with": 1,
+              "zeotap": 1
+            },
+            "intents": {
+              "howto.segment.source": 1,
+              "howto.mparticle.profile": 1,
+              "howto.lytics.segment": 1,
+              "howto.zeotap.integration": 1
+            },
+            "intentFeatures": {
+              "howto.segment.source": {
+                "how": 1,
+                "do": 1,
+                "i": 1,
+                "set": 1,
+                "up": 1,
+                "a": 1,
+                "new": 1,
+                "sourc": 1,
+                "in": 1,
+                "segment": 1
+              },
+              "howto.mparticle.profile": {
+                "how": 1,
+                "can": 1,
+                "i": 1,
+                "creat": 1,
+                "a": 1,
+                "user": 1,
+                "profil": 1,
+                "in": 1,
+                "mparticl": 1
+              },
+              "howto.lytics.segment": {
+                "how": 1,
+                "do": 1,
+                "i": 1,
+                "build": 1,
+                "an": 1,
+                "audienc": 1,
+                "segment": 1,
+                "in": 1,
+                "lytic": 1
+              },
+              "howto.zeotap.integration": {
+                "how": 1,
+                "can": 1,
+                "i": 1,
+                "integr": 1,
+                "my": 1,
+                "data": 1,
+                "with": 1,
+                "zeotap": 1
+              }
+            },
+            "featuresToIntent": {
+              "how": [
+                "howto.segment.source",
+                "howto.mparticle.profile",
+                "howto.lytics.segment",
+                "howto.zeotap.integration"
+              ],
+              "do": [
+                "howto.segment.source",
+                "howto.lytics.segment"
+              ],
+              "i": [
+                "howto.segment.source",
+                "howto.mparticle.profile",
+                "howto.lytics.segment",
+                "howto.zeotap.integration"
+              ],
+              "set": [
+                "howto.segment.source"
+              ],
+              "up": [
+                "howto.segment.source"
+              ],
+              "a": [
+                "howto.segment.source",
+                "howto.mparticle.profile"
+              ],
+              "new": [
+                "howto.segment.source"
+              ],
+              "sourc": [
+                "howto.segment.source"
+              ],
+              "in": [
+                "howto.segment.source",
+                "howto.mparticle.profile",
+                "howto.lytics.segment"
+              ],
+              "segment": [
+                "howto.segment.source",
+                "howto.lytics.segment"
+              ],
+              "can": [
+                "howto.mparticle.profile",
+                "howto.zeotap.integration"
+              ],
+              "creat": [
+                "howto.mparticle.profile"
+              ],
+              "user": [
+                "howto.mparticle.profile"
+              ],
+              "profil": [
+                "howto.mparticle.profile"
+              ],
+              "mparticl": [
+                "howto.mparticle.profile"
+              ],
+              "build": [
+                "howto.lytics.segment"
+              ],
+              "an": [
+                "howto.lytics.segment"
+              ],
+              "audienc": [
+                "howto.lytics.segment"
+              ],
+              "lytic": [
+                "howto.lytics.segment"
+              ],
+              "integr": [
+                "howto.zeotap.integration"
+              ],
+              "my": [
+                "howto.zeotap.integration"
+              ],
+              "data": [
+                "howto.zeotap.integration"
+              ],
+              "with": [
+                "howto.zeotap.integration"
+              ],
+              "zeotap": [
+                "howto.zeotap.integration"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "how",
+                "do",
+                "i",
+                "set",
+                "up",
+                "a",
+                "new",
+                "sourc",
+                "in",
+                "segment",
+                "can",
+                "creat",
+                "user",
+                "profil",
+                "mparticl",
+                "build",
+                "an",
+                "audienc",
+                "lytic",
+                "integr",
+                "my",
+                "data",
+                "with",
+                "zeotap"
+              ],
+              "intents": [
+                "howto.segment.source",
+                "howto.mparticle.profile",
+                "howto.lytics.segment",
+                "howto.zeotap.integration"
+              ],
+              "perceptrons": [
+                [
+                  0.2647477090358734,
+                  1.1951100826263428,
+                  0.2647477090358734,
+                  2.312753438949585,
+                  2.312753438949585,
+                  1.575788974761963,
+                  2.312753438949585,
+                  2.312753438949585,
+                  0.44984349608421326,
+                  1.1951100826263428,
+                  -0.8450016975402832,
+                  -0.6393330693244934,
+                  -0.6393330693244934,
+                  -0.6393330693244934,
+                  -0.6393330693244934,
+                  -1.019195795059204,
+                  -1.019195795059204,
+                  -1.019195795059204,
+                  -1.019195795059204,
+                  -0.1274784952402115,
+                  -0.1274784952402115,
+                  -0.1274784952402115,
+                  -0.1274784952402115,
+                  -0.1274784952402115,
+                  0.12172813395719656
+                ],
+                [
+                  0.41336795687675476,
+                  -1.0484448671340942,
+                  0.41336795687675476,
+                  -0.5716322064399719,
+                  -0.5716322064399719,
+                  1.5892447233200073,
+                  -0.5716322064399719,
+                  -0.5716322064399719,
+                  1.1265867948532104,
+                  -1.0484448671340942,
+                  1.542160987854004,
+                  2.2465217113494873,
+                  2.2465217113494873,
+                  2.2465217113494873,
+                  2.2465217113494873,
+                  -0.3637104332447052,
+                  -0.3637104332447052,
+                  -0.3637104332447052,
+                  -0.3637104332447052,
+                  -0.6540231108665466,
+                  -0.6540231108665466,
+                  -0.6540231108665466,
+                  -0.6540231108665466,
+                  -0.6540231108665466,
+                  0.19391257107656992
+                ],
+                [
+                  0.5565955638885498,
+                  1.2472572326660156,
+                  0.5565955638885498,
+                  -1.0383223295211792,
+                  -1.0383223295211792,
+                  -1.414915919303894,
+                  -1.0383223295211792,
+                  -1.0383223295211792,
+                  0.9077516794204712,
+                  1.2472572326660156,
+                  -0.6423403024673462,
+                  -0.27911972999572754,
+                  -0.27911972999572754,
+                  -0.27911972999572754,
+                  -0.27911972999572754,
+                  2.3840880393981934,
+                  2.3840880393981934,
+                  2.3840880393981934,
+                  2.3840880393981934,
+                  -0.27375805377960205,
+                  -0.27375805377960205,
+                  -0.27375805377960205,
+                  -0.27375805377960205,
+                  -0.27375805377960205,
+                  0.2660010036213961
+                ],
+                [
+                  0.8765162229537964,
+                  -0.48629820346832275,
+                  0.8765162229537964,
+                  -0.18401934206485748,
+                  -0.18401934206485748,
+                  -0.8670696020126343,
+                  -0.18401934206485748,
+                  -0.18401934206485748,
+                  -1.176466703414917,
+                  -0.48629820346832275,
+                  1.4285143613815308,
+                  -0.5845811367034912,
+                  -0.5845811367034912,
+                  -0.5845811367034912,
+                  -0.5845811367034912,
+                  -0.2121833860874176,
+                  -0.2121833860874176,
+                  -0.2121833860874176,
+                  -0.2121833860874176,
+                  2.1219632625579834,
+                  2.1219632625579834,
+                  2.1219632625579834,
+                  2.1219632625579834,
+                  2.1219632625579834,
+                  0.42134861543086427
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "How do I set up a new source in Segment?"
+      ],
+      [
+        "en",
+        "How can I create a user profile in mParticle?"
+      ],
+      [
+        "en",
+        "How do I build an audience segment in Lytics?"
+      ],
+      [
+        "en",
+        "How can I integrate my data with Zeotap?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

@@ -1,0 +1,119 @@
+/* General Layout */
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background-color: #f4f7fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: #4CAF50;
+}
+
+.header p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Chatbox Styling */
+.chatbox {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background-color: #e0f7fa;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  padding: 10px;
+}
+
+/* Input Form */
+.question-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.submit-btn {
+  padding: 12px 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .App {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .question-form {
+    flex-direction: column;
+  }
+
+  .question-input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
