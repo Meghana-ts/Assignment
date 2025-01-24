@@ -13,4 +13,3 @@ Full-featured Google Sheets clone with advanced functionality.
 - Complete spreadsheet functionality
 - Mathematical functions
 - Data quality operations
-- Secure authenticationGIT
